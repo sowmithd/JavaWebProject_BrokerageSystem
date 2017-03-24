@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core">
+    <body>
+        <ui:composition template="masterpage.xhtml">
+            <ui:define name="header">
+                <h3 style="text-align: center;font-family: cursive;font-style: italic">Registration</h3>
+            </ui:define>
+            <ui:define name="content">
+                <h:form class="form-control">
+                    <div  style="text-align: center;padding-top: 2%">
+                        <div class="form-group row" style="justify-content: left">
+                        <label for="ssn" class="col-xs-2 col-form-label">SSN :  </label>
+                        <h:inputText class="form-control" value="#{registration.ssn}" style="border-radius: 5px" required="true" requiredMessage="SSN cannot be null"
+                                     ></h:inputText>
+                        
+                    </div>
+                        <p></p>
+                    <div class="form-group row" style="justify-content: left">
+                        <label for="fname" class="col-xs-2 col-form-label">FirstName :  </label>
+                        <h:inputText class="form-control" value="#{registration.fname}" style="border-radius: 5px" required="true"></h:inputText>
+                    </div>
+                         <p></p>
+                    <div class="form-group row" style="justify-content: left">
+                        <label for="lname" class="col-xs-2 col-form-label">LastName :  </label>
+                        <h:inputText class="form-control" value="#{registration.lname}" style="border-radius: 5px" required="true"></h:inputText>
+                    </div>
+                         <p></p>
+                         <div class="form-group row" style="justify-content: left">
+                        <label for="loginid" class="col-xs-2 col-form-label">LoginID:  </label>
+                        <h:inputText class="form-control" value="#{registration.loginID}" style="border-radius: 5px" required="true"></h:inputText>
+                    </div>
+                         <p></p>
+                         <div class="form-group row" style="justify-content: left">
+                        <label for="password" class="col-xs-2 col-form-label">Password :  </label>
+                        <h:inputText class="form-control" value="#{registration.password}" style="border-radius: 5px" required="true"></h:inputText>
+                    </div>
+                        
+                        <p></p>
+                        <label for="securityquestions1" class="col-xs-2 col-form-label">Security Question1 :  </label>
+                        <h:selectOneMenu  value="#{registration.sq1}" hideNoSelectionOption="true">
+                            
+                             <f:selectItems itemValue="#{registration
+                                                         .sq1}" value="#{securityQuestions.securityquestions()}"/>
+                        </h:selectOneMenu>
+                        <p></p>
+                        <div class="form-group row" style="justify-content: left">
+                        <label for="answer1" class="col-xs-2 col-form-label">Answer1 :  </label>
+                        <h:inputText class="form-control" value="#{registration.answer1}" style="border-radius: 5px"></h:inputText>
+                    </div>
+                        <p></p>
+                        <label for="securityquestions2" class="col-xs-2 col-form-label">Security Question2 :  </label>
+                        <h:selectOneMenu  value="#{registration.sq2}">
+                            <f:selectItems itemValue="#{registration.sq2}" value="#{securityQuestions.securityquestions()}"/>
+                        </h:selectOneMenu>
+                        <p></p>
+                        <div class="form-group row" style="justify-content: left">
+                        <label for="answer2" class="col-xs-2 col-form-label">Answer2 :  </label>
+                        <h:inputText class="form-control" value="#{registration.answer2}" style="border-radius: 5px"></h:inputText>
+                    </div>
+                        <p></p>
+                         <div class="form-group row" style="justify-content: left">
+                        <label for="deposit" class="col-xs-2 col-form-label">Deposit :  </label>
+                        <h:inputText class="form-control" value="#{registration.deposit}" style="border-radius: 5px"></h:inputText>
+                    </div>
+                        <p></p>
+                        <h:commandButton id="submit" class="btn btn-primary" style="background-color:#6495ED" value="Create Account"
+                                 action="confirmation.xhtml" />
+                    </div>
+                </h:form>
+            </ui:define>
+        </ui:composition>
+    </body>
+</html>

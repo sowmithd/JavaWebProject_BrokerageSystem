@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core">
+ 
+    <body>
+     <ui:composition template="masterpage.xhtml">
+            <ui:define name="header">
+                <h3 style="text-align: center;font-family: cursive;font-style: italic">Login into your Brokerage Account</h3>
+            </ui:define>    
+         <ui:define name="content">
+             <h:form class="form-control">
+                    <div  style="text-align: center;padding-top: 10%">
+                        <div class="form-group row" style="justify-content: left">
+                        <label for="username" class="col-xs-2 col-form-label">Username :  </label>
+                        <h:inputText class="form-control" style="border-radius: 5px" value="#{login.loginid}" required="true" requiredMessage="Usernamecannot be null"
+                                     ></h:inputText>
+                        
+                    </div>
+                        <p></p>
+                        <p></p>
+                        <div class="form-group row" style="justify-content: left">
+                        <label for="password" class="col-xs-2 col-form-label">Password :  </label>
+                        <h:inputText class="form-control" style="border-radius: 5px" value="#{login.pasword}" required="true" requiredMessage="Password cannot be null"
+                                     ></h:inputText>
+                        
+                    </div>
+                        <p></p>
+                        <p></p>
+                        <h:commandButton id="submit" value="Login" action="#{login.login()}"/>
+                    </div>
+             </h:form>
+         </ui:define>
+     </ui:composition>
+    </body>
+</html>

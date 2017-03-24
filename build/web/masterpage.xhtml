@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+    <h:head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <h:outputStylesheet name="bootstrap/css/bootstrap.css">
+            
+        </h:outputStylesheet>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+   </h:head>
+    <body style="background-color: black">
+        <div id="maindiv">
+            <div id="header" style="color: white">
+                <ui:insert name="header">
+                    <ui:include src="header.xhtml">
+                        
+                    </ui:include>
+                </ui:insert>
+                <hr></hr>
+            </div>
+            <div id="content" style="background-color: buttonface;width: 80%;height:420px;margin-left: 10%;margin-right: 10%;margin-bottom: 1%;margin-top: 0.5%">
+                <ui:insert name="content">
+                   <ui:include src="content.xhtml">
+                        
+                    </ui:include> 
+                </ui:insert>
+            </div>
+            
+            <div id="footer" style="color: white;">
+                <p></p>
+                <hr></hr>
+  
+                <ui:insert name="footer">
+                   <ui:include src="footer.xhtml">
+                        
+                    </ui:include>
+                </ui:insert>
+            </div>
+        </div>
+    </body>
+</html>
